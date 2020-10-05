@@ -6,3 +6,13 @@ export const changePlanets = (newPlanets) => {
     value: newPlanets,
   };
 };
+
+export const fetchPlanetsAsyc = () => {
+  return (dispatch) => {
+    fetch("https://swapi.dev/api/planets/")
+      .then((response) => response.json())
+      .then((data) => {
+        dispatch(changePlanets(data.results))
+      });
+  };
+};

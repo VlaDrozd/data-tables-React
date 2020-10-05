@@ -7,7 +7,8 @@ export const peopleReducer = (state = defaultState, action) => {
   switch (action.type) {
     case CHANGE_PEOPLE:
       return {
-        results: action.results
+        ...state,
+        results: action.value
       };
     default:
       return state;

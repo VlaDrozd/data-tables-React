@@ -6,3 +6,13 @@ export const changeStarships = (newPlanets) => {
     value: newPlanets,
   };
 };
+
+export const fetchStarshipsAsyc = () => {
+  return (dispatch) => {
+    fetch("https://swapi.dev/api/planets/")
+      .then((response) => response.json())
+      .then((data) => {
+        dispatch(changeStarships(data.results))
+      });
+  };
+};
