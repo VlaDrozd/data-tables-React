@@ -1,9 +1,17 @@
 export const CHANGE_STARSHIPS = "CHANGE_STARSHIPS";
+export const ADD_STARSHIP = "ADD_STARSHIP"
 
 export const changeStarships = (newPlanets) => {
   return {
     type: CHANGE_STARSHIPS,
     value: newPlanets,
+  };
+};
+
+export const addStarship = (newStarship) => {
+  return {
+    type: ADD_STARSHIP,
+    value: newStarship,
   };
 };
 

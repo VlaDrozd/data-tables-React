@@ -1,4 +1,4 @@
-import { CHANGE_PLANETS } from "./actions";
+import { ADD_PLANET, CHANGE_PLANETS } from "./actions";
 const defaultState = {
   results: [],
 };
@@ -9,6 +9,11 @@ export const planetsReducer = (state = defaultState, action) => {
       return {
         ...state,
         results: action.value,
+      };
+    case ADD_PLANET:
+      return {
+        ...state,
+        results: [...state.results, action.value],
       };
     default:
       return state;

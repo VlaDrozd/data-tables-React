@@ -1,4 +1,4 @@
-import { CHANGE_PEOPLE } from "./actions";
+import { ADD_PERSON, CHANGE_PEOPLE } from "./actions";
 const defaultState = {
   results: [],
 };
@@ -8,7 +8,12 @@ export const peopleReducer = (state = defaultState, action) => {
     case CHANGE_PEOPLE:
       return {
         ...state,
-        results: action.value
+        results: action.value,
+      };
+    case ADD_PERSON:
+      return {
+        ...state,
+        results: [...state.results, action.value],
       };
     default:
       return state;
