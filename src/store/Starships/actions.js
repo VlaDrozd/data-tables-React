@@ -17,7 +17,7 @@ export const addStarship = (newStarship) => {
 
 export const fetchStarshipsAsyc = () => {
   return (dispatch) => {
-    fetch("https://swapi.dev/api/planets/")
+    fetch("https://swapi.dev/api/starships/")
       .then((response) => response.json())
       .then((data) => {
         dispatch(changeStarships(data.results))
