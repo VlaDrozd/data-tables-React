@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPeopleAsyc } from './../../store/People/actions';
 import { People } from "./People";
+import { PeopleForm } from "./PeopleForm";
 
 export const PeoplePage = () => {
   const dispatch = useDispatch();
@@ -9,11 +10,12 @@ export const PeoplePage = () => {
 
   useEffect(() => {
     if(!people.results.length) dispatch(fetchPeopleAsyc());
-  }, [dispatch, people])
+  }, [dispatch, people]);
 
   return (
     <div>
       <People people={people} />
+      <PeopleForm dispatcher={dispatch}></PeopleForm>
     </div>
   );
 };
